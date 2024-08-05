@@ -32,7 +32,7 @@ export async function compileLlamaCpp({
         if ((metal && process.platform === "darwin") || process.env.LLAMA_METAL === "1") cmakeCustomOptions.set("LLAMA_METAL", "1");
         else cmakeCustomOptions.set("LLAMA_METAL", "OFF");
 
-        if (cuda || process.env.LLAMA_CUBLAS === "1") cmakeCustomOptions.set("LLAMA_CUBLAS", "1");
+        if (cuda || process.env.LLAMA_CUBLAS === "1") cmakeCustomOptions.set("GGML_CUDA", "1");
 
         if (process.env.LLAMA_MPI === "1") cmakeCustomOptions.set("LLAMA_MPI", "1");
         if (process.env.LLAMA_OPENBLAS === "1") cmakeCustomOptions.set("LLAMA_OPENBLAS", "1");
